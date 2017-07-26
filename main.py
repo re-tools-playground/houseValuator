@@ -11,7 +11,7 @@ def getResults():
     result = api.GetSearchResults(key, address, postalCode)
     zestimate = result.zestiamte.amount
     formattedZestimate = '{:,}'.format(zestimate)
-    print(formattedZestimate)
+    print("$" + formattedZestimate)
 
 
 getResults()
