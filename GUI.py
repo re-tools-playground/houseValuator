@@ -4,6 +4,7 @@ from PyQt4.QtGui import *
 from data import *
 # create our window
 app = QApplication(sys.argv)
+app.setWindowIcon(QIcon('home.png'))
 w = QWidget()
 w.setWindowTitle('Home Value Calculator')
 
@@ -11,22 +12,22 @@ w.setWindowTitle('Home Value Calculator')
 textbox = QLineEdit(w)
 textbox.setPlaceholderText("Address")
 textbox.move(20, 20)
-textbox.resize(280,40)
+textbox.resize(280,30)
 
 textbox2 = QLineEdit(w)
 textbox2.setPlaceholderText("Zip Code")
-textbox2.move(20, 90)
-textbox2.resize(280,40)
+textbox2.move(20, 70)
+textbox2.resize(280,30)
 
 
 #Create Value Label
 value = QLabel()
 # Set window size.
-w.setFixedSize(460, 240)
+w.setFixedSize(400, 210)
 
 # Create a button in the window
 button = QPushButton('Calculate', w)
-button.move(20,190)
+button.move(20,170)
 
 # Create the actions
 @pyqtSlot()
