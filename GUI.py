@@ -19,11 +19,20 @@ textbox2.setPlaceholderText("Zip Code")
 textbox2.move(20, 70)
 textbox2.resize(280,30)
 
+textbox3 = QLineEdit(w)
+textbox3.move(250, 170)
+textbox3.resize(90,20)
+textbox3.isReadOnly()
 
+
+textbox4 = QLineEdit(w)
+textbox4.move(250, 140)
+textbox4.resize(330,20)
+textbox4.isReadOnly()
 #Create Value Label
 value = QLabel()
 # Set window size.
-w.setFixedSize(400, 210)
+w.setFixedSize(600, 210)
 
 # Create a button in the window
 button = QPushButton('Calculate', w)
@@ -34,11 +43,12 @@ button.move(20,170)
 def on_click():
     address = textbox.text()
     zipCode = textbox2.text()
-    print("Value: " + getResults(address, zipCode))
+    #print("Value: " + getResults(address, zipCode))
 
     #FIX THIS!
-    #value.setText("Value: " + getResults(address, zipCode))
-    app.exit()
+    textbox3.setPlaceholderText("Value: " + getResults(address, zipCode))
+    textbox4.setPlaceholderText("Address: " + getAddress(address, zipCode))
+    #app.exit()
 
 # connect the signals to the slots
 button.clicked.connect(on_click)
