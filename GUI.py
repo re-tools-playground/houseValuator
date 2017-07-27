@@ -33,8 +33,11 @@ button.move(20,190)
 def on_click():
     address = textbox.text()
     zipCode = textbox2.text()
-    value.setText("Value: " + getResults(address, zipCode))
+    print("Value: " + getResults(address, zipCode))
 
+    #FIX THIS!
+    #value.setText("Value: " + getResults(address, zipCode))
+    app.exit()
 
 # connect the signals to the slots
 button.clicked.connect(on_click)
