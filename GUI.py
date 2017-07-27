@@ -21,7 +21,7 @@ textbox2.resize(280,30)
 
 textbox3 = QLineEdit(w)
 textbox3.move(250, 170)
-textbox3.resize(90,20)
+textbox3.resize(225,20)
 textbox3.isReadOnly()
 
 
