@@ -14,14 +14,18 @@ textbox.move(20, 20)
 textbox.resize(280,40)
 
 textbox2 = QLineEdit(w)
-textbox.setPlaceholderText("Zip Code")
+textbox2.setPlaceholderText("Zip Code")
 textbox2.move(20, 90)
 textbox2.resize(280,40)
+
+
+#Create Value Label
+value = QLabel()
 # Set window size.
 w.setFixedSize(460, 240)
 
 # Create a button in the window
-button = QPushButton('Submit', w)
+button = QPushButton('Calculate', w)
 button.move(20,190)
 
 # Create the actions
@@ -29,8 +33,8 @@ button.move(20,190)
 def on_click():
     address = textbox.text()
     zipCode = textbox2.text()
+    value.setText("Value: " + getResults(address, zipCode))
 
-getResults(address, postalCode)
 
 # connect the signals to the slots
 button.clicked.connect(on_click)
