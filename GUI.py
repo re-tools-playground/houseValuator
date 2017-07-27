@@ -1,7 +1,7 @@
 import sys
 from PyQt4.QtCore import pyqtSlot
 from PyQt4.QtGui import *
-
+from data import *
 # create our window
 app = QApplication(sys.argv)
 w = QWidget()
@@ -30,6 +30,7 @@ def on_click():
     address = textbox.text()
     zipCode = textbox2.text()
 
+getResults(address, postalCode)
 
 # connect the signals to the slots
 button.clicked.connect(on_click)
