@@ -8,29 +8,16 @@ app.setWindowIcon(QIcon('home.png'))
 w = QWidget()
 w.setWindowTitle('Home Value Calculator')
 
-# Create textbox
-textbox = QLineEdit(w)
-textbox.setPlaceholderText("Address")
-textbox.move(20, 20)
-textbox.resize(280,30)
+# Create addressBox
+addressBox = QLineEdit(w)
+addressBox.setPlaceholderText("Address")
+addressBox.move(20, 20)
+addressBox.resize(280,30)
 
-textbox2 = QLineEdit(w)
-textbox2.setPlaceholderText("Zip Code")
-textbox2.move(20, 70)
-textbox2.resize(280,30)
-'''
-textbox3 = QLineEdit(w)
-textbox3.move(250, 170)
-textbox3.resize(225,20)
-textbox3.isReadOnly()
-
-
-textbox4 = QLineEdit(w)
-textbox4.move(250, 140)
-textbox4.resize(330,20)
-textbox4.isReadOnly()
-'''
-layout = QVBoxLayout()
+postalBox = QLineEdit(w)
+postalBox.setPlaceholderText("Zip Code")
+postalBox.move(20, 70)
+postalBox.resize(280,30)
 
 #Create Value Label
 value = QLabel("", w)
@@ -50,16 +37,11 @@ button.move(20,170)
 # Create the actions
 @pyqtSlot()
 def on_click():
-    address = textbox.text()
-    zipCode = textbox2.text()
-    #print("Value: " + getResults(address, zipCode))
+    address = addressBox.text()
+    zipCode = postalBox.text()
     value.setText("Value: " + getResults(address, zipCode))
     addressLabel.setText(getAddress(address, zipCode))
-    #FIX THIS!
-    '''
-    textbox3.setPlaceholderText("Value: " + getResults(address, zipCode))
-    textbox4.setPlaceholderText("Address: " + getAddress(address, zipCode))
-    '''
+
     #app.exit()
 
 # connect the signals to the slots
