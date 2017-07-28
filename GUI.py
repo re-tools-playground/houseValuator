@@ -20,12 +20,12 @@ postalBox.move(20, 70)
 postalBox.resize(280,30)
 
 #Create Value Label
-value = QLabel("", w)
-value.move(250,170)
+value = QLabel("Value: ", w)
+value.move(310,27)
 value.resize(330,20)
 
-addressLabel = QLabel("", w)
-addressLabel.move(250,140)
+addressLabel = QLabel("Address: ", w)
+addressLabel.move(310,77)
 addressLabel.resize(330, 20)
 # Set window size.
 w.setFixedSize(600, 210)

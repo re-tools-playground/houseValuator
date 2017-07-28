@@ -5,9 +5,8 @@ sys.path.insert(0, './src')
 from zillowapi import api, key
 
 def getResults(address, postalCode):
-
     result = api.GetSearchResults(key, address, postalCode)
-    zestimate = result.zestiamte.amount
+    zestimate = result.zestiamte.valuation_range_low
     formattedZestimate = '{:,}'.format(zestimate)
     return("$" + formattedZestimate)
 
