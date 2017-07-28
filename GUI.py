@@ -18,7 +18,7 @@ textbox2 = QLineEdit(w)
 textbox2.setPlaceholderText("Zip Code")
 textbox2.move(20, 70)
 textbox2.resize(280,30)
-
+'''
 textbox3 = QLineEdit(w)
 textbox3.move(250, 170)
 textbox3.resize(225,20)
@@ -29,8 +29,17 @@ textbox4 = QLineEdit(w)
 textbox4.move(250, 140)
 textbox4.resize(330,20)
 textbox4.isReadOnly()
+'''
+layout = QVBoxLayout()
+
 #Create Value Label
-value = QLabel()
+value = QLabel("", w)
+value.move(250,170)
+value.resize(330,20)
+
+addressLabel = QLabel("", w)
+addressLabel.move(250,140)
+addressLabel.resize(330, 20)
 # Set window size.
 w.setFixedSize(600, 210)
 
@@ -44,10 +53,13 @@ def on_click():
     address = textbox.text()
     zipCode = textbox2.text()
     #print("Value: " + getResults(address, zipCode))
-
+    value.setText("Value: " + getResults(address, zipCode))
+    addressLabel.setText(getAddress(address, zipCode))
     #FIX THIS!
+    '''
     textbox3.setPlaceholderText("Value: " + getResults(address, zipCode))
     textbox4.setPlaceholderText("Address: " + getAddress(address, zipCode))
+    '''
     #app.exit()
 
 # connect the signals to the slots
